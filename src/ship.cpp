@@ -9,13 +9,13 @@
 Ship::Ship() :
 	m_maxSpeed(5.0f), m_currentDirection(0.0f), m_turnSpeed(2.0f), m_steerForce(0.1f), m_currentTile(NULL)
 {
-	TheTextureManager::Instance()->load("../Assets/textures/ship3.png",
+	TheTextureManager::Instance()->load("../Assets/textures/td.png",
 		"ship", TheGame::Instance()->getRenderer());
 
 	glm::vec2 size = TheTextureManager::Instance()->getTextureSize("ship");
 	setWidth(size.x);
 	setHeight(size.y);
-	setPosition(glm::vec2(400.0f, 300.0f));
+	setPosition(glm::vec2(100.0f, 300.0f));
 	setVelocity(glm::vec2(0.0f, 0.0f));
 	setAcceleration(glm::vec2(0.0f, 0.0f));
 	setIsColliding(false);
@@ -89,7 +89,7 @@ void Ship::turnLeft()
 
 void Ship::move()
 {
-	if (Util::distance(getPosition(), m_target) > 1.0f) {
+	/*if (Util::distance(getPosition(), m_target) > 1.0f) {
 		glm::vec2 desired = Util::normalize(m_target - getPosition()) * m_maxSpeed;
 		setVelocity(desired);
 
@@ -97,7 +97,7 @@ void Ship::move()
 		glm::vec2 newPosition = getPosition() + getVelocity();
 		setPosition(newPosition);
 	}
-	
+	*/
 
 }
 
